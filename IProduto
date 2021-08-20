@@ -1,0 +1,8 @@
+package prog2.av3;
+
+public interface IProduto {
+    
+    public double calcularValorEmEstoque();
+    
+
+}
