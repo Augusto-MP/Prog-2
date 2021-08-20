@@ -1,7 +1,8 @@
 
 package prog2.av3;
 
-public abstract class Produto implements IProduto{
+public abstract class Produto implements IProduto, Comparable<Produto>  {
+    
     private int codigo;
     private double preco;
     private String nome;
@@ -22,7 +23,12 @@ public abstract class Produto implements IProduto{
     public String toString(){
         return codigo+ " "+ nome;
     }
-    
+   
+    @Override
+    public int compareTo(Produto c){
+        return (codigo - c.getCodigo());
+    }
+            
     public void setNome(String nome){
         this.nome = nome;
     }
