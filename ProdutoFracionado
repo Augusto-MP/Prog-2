@@ -1,0 +1,39 @@
+
+package prog2.av3;
+
+
+public class ProdutoFracionado extends Produto{
+    
+    private double quantidadeEstoque;
+    
+    
+    public ProdutoFracionado(){
+        super();
+        this.quantidadeEstoque = 0;
+    }
+    
+    public ProdutoFracionado(String nome, int codigo, double preco, double quantidadeEstoque){
+        super(codigo, nome, preco);
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+    
+    @Override
+    public double calcularValorEmEstoque(){
+        return this.quantidadeEstoque * getPreco();
+    }
+    
+    
+    public void adcionarEstoque(double e){
+       this.quantidadeEstoque =+ e;
+    }
+    
+  
+    public void vender(double v){
+       this.quantidadeEstoque =- v;
+    }
+    
+    
+    
+    
+    
+}
