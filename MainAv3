@@ -1,5 +1,7 @@
+
 package prog2.av3;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainAv3 {
     public static void main(String[] args){
@@ -10,29 +12,29 @@ public class MainAv3 {
         produtos.add(new ProdutoUnitario("Leite Vida Curta", 13, 2.99, 24));
         produtos.add(new ProdutoFracionado("Tomate Podre", 69, 7.99, 50));
         produtos.add(new ProdutoFracionado("Limão bão", 24, 2.99, 100));
+        produtos.add(new ProdutoUnitario("Guaraná Jesus", 666, 3.99, 200));
+        produtos.add(new ProdutoFracionado("Laranja", 14, 4.99, 150));
         
         Produto prod1 = new ProdutoUnitario("Deregue Johnson", 420, 10, 1000); 
         produtos.add(prod1);
+        
+        
+        
+        Collections.sort(produtos);
+        
+        System.out.println("Tamanho total:"+produtos.size());
         
         
         for (Produto aux : produtos){
             System.out.println(aux.getCodigo()+" "+aux.getNome()+" R$"+aux.getPreco());
         }
        
-        
-        
-        
-        
-        
         double estoqueTotal = 0;
         for (Produto aux : produtos){
             estoqueTotal = estoqueTotal + aux.calcularValorEmEstoque();   
         }
         System.out.println("Valor total do estoque R$"+estoqueTotal);
-        
-        
-        
-        
-        
+ 
     }
 }
+
