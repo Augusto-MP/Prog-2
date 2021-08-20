@@ -1,0 +1,37 @@
+
+package prog2.av3;
+
+
+public class ProdutoUnitario extends Produto {
+   
+    private int quantidadeEstoque; 
+    
+    
+    public ProdutoUnitario(){
+        super(); 
+        this.quantidadeEstoque = 0;  
+    }
+
+    public ProdutoUnitario(String nome, int codigo, double preco, int quantidadeEstoque){
+        super(codigo, nome, preco);
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+    
+    @Override
+    public double calcularValorEmEstoque(){
+        return quantidadeEstoque * getPreco();
+    }
+    
+    
+    
+    public void adicionarEstoque(int e){
+       quantidadeEstoque = quantidadeEstoque + e;
+    }
+    
+   
+    public void vender(int v){
+       quantidadeEstoque = quantidadeEstoque - v;
+    }
+    
+    
+}
